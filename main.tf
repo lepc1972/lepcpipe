@@ -21,7 +21,7 @@ data "aws_ami" "amazon_linux" {
 }
 
 resource "aws_instance" "tf-ec2" {
-  ami           = data.aws_ami.amazon_linux.id
+  ami           = "ami-048b22ce7dcf74123"
   instance_type = var.instance_type
   key_name      = var.key_name
 
