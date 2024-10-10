@@ -10,10 +10,13 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
+      - "yum clean all"
+      - "yum makecache fast"
       - "yum install -y yum-utils"
       - "yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
       - "yum -y install terraform --nogpgcheck"
-      - "yum -y install python-chardet --nogpgcheck"
+      - "yum -y install python-chardet --nogpgcheck --skip-broken --disableplugin=fastestmirror"
+
   build:
     commands:
       - "cd ${CODEBUILD_SRC_DIR}"
