@@ -12,7 +12,8 @@ phases:
     commands:
       - "yum install -y yum-utils"
       - "yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo"
-      - "yum -y install terraform"
+      - "yum -y install terraform --nogpgcheck"
+      - "yum -y install python-chardet --nogpgcheck"
   build:
     commands:
       - "cd ${CODEBUILD_SRC_DIR}"
