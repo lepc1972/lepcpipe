@@ -10,7 +10,7 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Name of the existing EC2 key pair"
-  default = "achintha-tf"
+  default = "pipe"
 }
 
 variable "s3_bucket_name" {
